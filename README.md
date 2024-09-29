@@ -11,7 +11,7 @@ authentication functionality for users. It allows users to sign up, sign in etc.
 -   User signin/signin
 -   User profile
 -   Protected routes
--   JWT token management
+-   JWT token management (access tokens and refresh token)
 -   Responsive design
 -   Auth defect and apply theme (light or dark)
 
