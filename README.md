@@ -18,7 +18,7 @@ authentication functionality for users. It allows users to sign up, sign in etc.
 
 Before you begin, ensure you have the following installed:
 
--   [Node.js](https://nodejs.org/) (version 14 or later)
+-   [Node.js](https://nodejs.org/) (version 18 or later)
 -   [npm](https://www.npmjs.com/) (Node package manager)
 
 ## Getting Started
