@@ -80,6 +80,7 @@ const SignIn: React.FC = () => {
 								id="email"
 								name="email"
 								label="Email"
+								autoComplete="username"
 								value={formik.values.email}
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -99,6 +100,7 @@ const SignIn: React.FC = () => {
 								name="password"
 								label="Password"
 								type="password"
+								autoComplete="current-password"
 								value={formik.values.password}
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}

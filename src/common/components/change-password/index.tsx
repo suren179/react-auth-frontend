@@ -11,7 +11,6 @@ import Loader from '../loader';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import { sleep } from '../../utilities/utils';
 
 interface Props {
 	onClose: any;
@@ -41,7 +40,6 @@ const ChangePassword = ({ onClose = () => {}, onSucc = () => {} }: Props) => {
 		try {
 			setError(null);
 			await changePassword(values.oldPassword, values.newPassword);
-			await sleep(3000);
 			onSucc();
 		} catch (error) {
 			setError(error);
