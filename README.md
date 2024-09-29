@@ -47,11 +47,16 @@ npm install
     ```env
     REACT_APP_API_URL=https://localhost:3000
     PORT=3001
+    REACT_APP_API_DEV_DELAY=500
     ```
 
 ### Running the Application
 
 To start the development server, run:
+
+In development mode there is a 500ms delay added to all apis to simulate real
+server api response (as the local apis will be almost instantenous): This is
+configurable through env (REACT_APP_API_DEV_DELAY)
 
 For MAC
 
