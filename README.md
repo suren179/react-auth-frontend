@@ -13,12 +13,13 @@ authentication functionality for users. It allows users to sign up, sign in etc.
 -   Protected routes
 -   JWT token management
 -   Responsive design
+-   Auth defect and apply theme (light or dark)
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
--   [Node.js](https://nodejs.org/) (version 14 or later)
+-   [Node.js](https://nodejs.org/) (version 18 or later)
 -   [npm](https://www.npmjs.com/) (Node package manager)
 
 ## Getting Started
@@ -46,11 +47,16 @@ npm install
     ```env
     REACT_APP_API_URL=https://localhost:3000
     PORT=3001
+    REACT_APP_API_DEV_DELAY=500
     ```
 
 ### Running the Application
 
 To start the development server, run:
+
+In development mode there is a 500ms delay added to all apis to simulate real
+server api response (as the local apis will be almost instantenous): This is
+configurable through env (REACT_APP_API_DEV_DELAY)
 
 For MAC
 

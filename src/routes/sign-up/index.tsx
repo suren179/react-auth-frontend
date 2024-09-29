@@ -30,12 +30,16 @@ const SignUp: React.FC = () => {
 		email: 'testuser123@example.com',
 		name: 'Suren123',
 		password: 'Password123@',
+		confirmPassword: '',
 	};
 
 	const validationSchema = Yup.object({
 		email: emailValidation,
 		name: nameValidation,
 		password: passwordValidation,
+		confirmPassword: Yup.string()
+			.required('Please confirm your password')
+			.oneOf([Yup.ref('password')], 'Passwords must match'),
 	});
 
 	const handleSubmit = async (values: typeof initialValues) => {
@@ -67,7 +71,7 @@ const SignUp: React.FC = () => {
 						justifyContent="center"
 						size={{ xs: 12, sm: 8, md: 6, lg: 5, xl: 4 }}
 						sx={{
-							mt: '15vh',
+							mt: '10vh',
 							textAlign: 'center',
 							px: 2,
 						}}
@@ -81,6 +85,7 @@ const SignUp: React.FC = () => {
 								id="email"
 								name="email"
 								label="Email"
+								autoComplete="username"
 								value={formik.values.email}
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -117,6 +122,7 @@ const SignUp: React.FC = () => {
 								id="password"
 								name="password"
 								label="Password"
+								autoComplete="current-password"
 								type="password"
 								value={formik.values.password}
 								onChange={formik.handleChange}
@@ -128,6 +134,27 @@ const SignUp: React.FC = () => {
 								helperText={
 									formik.touched.password &&
 									formik.errors.password
+								}
+							/>
+						</Grid>
+						<Grid size={{ xs: 12 }}>
+							<TextField
+								fullWidth
+								id="confirmPassword"
+								name="confirmPassword"
+								label="Confirm Password"
+								autoComplete="current-password"
+								type="password"
+								value={formik.values.confirmPassword}
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								error={
+									formik.touched.confirmPassword &&
+									Boolean(formik.errors.confirmPassword)
+								}
+								helperText={
+									formik.touched.confirmPassword &&
+									formik.errors.confirmPassword
 								}
 							/>
 						</Grid>

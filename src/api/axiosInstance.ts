@@ -54,7 +54,7 @@ instance.interceptors.response.use(
 	async (response) => {
 		// add delay for dev env
 		if (process.env.NODE_ENV === 'development') {
-			await sleep(1000);
+			await sleep(+(process.env.REACT_APP_API_DEV_DELAY || 0));
 		}
 		return response;
 	},

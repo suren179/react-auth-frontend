@@ -37,3 +37,17 @@ export const fetchUserInfo = async () => {
 	console.info('fetchUserInfo', response);
 	return response.data;
 };
+
+export const changePassword = async (
+	oldPassword: string,
+	newPassword: string,
+) => {
+	const response = await instance.post(API_URLS.changePassword, {
+		oldPassword,
+		newPassword,
+	});
+	console.info('changePassword', response.data);
+	// localStorage.setItem(ACCESS_TOKEN_LS_KEY, response?.data?.accessToken);
+	// localStorage.setItem(REFRESH_TOKEN_LS_KEY, response?.data?.refreshToken);
+	return response.data;
+};
