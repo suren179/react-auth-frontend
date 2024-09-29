@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"homepage": ".",
+	"author": "Surendra Borana",
 	"dependencies": {
 		"@babel/core": "^7.16.0",
 		"@emotion/react": "^11.13.3",
@@ -75,6 +76,7 @@
 	},
 	"scripts": {
 		"start": "HTTPS=true node scripts/start.js",
+		"start-windows": "set HTTPS=true && node scripts/start.js",
 		"serve": "npm run build && npm install -g && serve -s build -p 3001",
 		"build": "node scripts/build.js",
 		"test": "node scripts/test.js"
