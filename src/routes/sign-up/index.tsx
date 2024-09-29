@@ -27,9 +27,9 @@ const SignUp: React.FC = () => {
 
 	const [error, setError] = useState<any>(null);
 	const initialValues = {
-		email: 'testuser123@example.com',
-		name: 'Suren123',
-		password: 'Password123@',
+		email: '',
+		name: '',
+		password: '',
 		confirmPassword: '',
 	};
 
