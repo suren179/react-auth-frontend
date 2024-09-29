@@ -58,6 +58,9 @@ In development mode there is a 500ms delay added to all apis to simulate real
 server api response (as the local apis will be almost instantenous): This is
 configurable through env (REACT_APP_API_DEV_DELAY)
 
+Please remember to accept self signed certificates for server app (
+[https://localhost:3000]) before accessing this web app
+
 For MAC
 
 ```bash
