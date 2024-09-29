@@ -13,6 +13,7 @@ authentication functionality for users. It allows users to sign up, sign in etc.
 -   Protected routes
 -   JWT token management
 -   Responsive design
+-   Auth defect and apply theme (light or dark)
 
 ## Prerequisites
 

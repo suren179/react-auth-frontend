@@ -7,7 +7,7 @@ export const API_URLS = {
 	refreshToken: 'auth/refresh-token',
 	auth: 'auth',
 	userInfo: 'users/me',
-	changePassword: 'users/change-password',
+	changePassword: 'users/me/change-password',
 };
 
 export const ROUTES = {

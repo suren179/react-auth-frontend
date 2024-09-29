@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import useUser from '../../hooks/useUser';
 import Loader from '../../common/components/loader';
@@ -10,8 +10,17 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import ChangePassword from '../../common/components/change-password';
 const Profile: React.FC = () => {
 	const { loading, data, error } = useUser();
+	const [showChangePasswordSuccess, setShowChangePasswordSuccess] =
+		useState(false);
+	const [showChangePassword, setShowChangePassword] =
+		useState<boolean>(false);
+
+	const handleChangePassword = () => {
+		setShowChangePassword(true);
+	};
 	return (
 		<>
 			{!loading ? (
@@ -63,15 +72,44 @@ const Profile: React.FC = () => {
 							</Typography>
 
 							<Box mt={4}>
-								<Button variant="contained" color="primary">
+								<Button
+									variant="contained"
+									color="primary"
+									onClick={handleChangePassword}
+								>
 									Change Password
 								</Button>
 							</Box>
 						</>
 					)}
+					{showChangePasswordSuccess && (
+						<Alert
+							severity="success"
+							onClose={() => {
+								setShowChangePasswordSuccess(false);
+							}}
+							sx={{ mt: 2 }}
+						>
+							Password Changed Successfully
+						</Alert>
+					)}
 				</Container>
 			) : (
 				<Loader />
+			)}
+			{showChangePassword && (
+				<ChangePassword
+					onClose={() => {
+						setShowChangePassword(false);
+					}}
+					onSucc={() => {
+						setShowChangePassword(false);
+						setShowChangePasswordSuccess(true);
+						setTimeout(() => {
+							setShowChangePasswordSuccess(false);
+						}, 3000);
+					}}
+				/>
 			)}
 		</>
 	);
