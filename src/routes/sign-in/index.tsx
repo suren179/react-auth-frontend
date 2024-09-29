@@ -28,8 +28,8 @@ const SignIn: React.FC = () => {
 
 	const [error, setError] = useState<any>(null);
 	const initialValues = {
-		email: 'testuser123@example.com',
-		password: 'Password123@',
+		email: '',
+		password: '',
 	};
 
 	const validationSchema = Yup.object({

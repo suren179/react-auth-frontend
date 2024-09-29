@@ -20,9 +20,9 @@ interface Props {
 const ChangePassword = ({ onClose = () => {}, onSucc = () => {} }: Props) => {
 	const [error, setError] = useState<any>(null);
 	const initialValues = {
-		oldPassword: 'Password123@',
-		newPassword: 'Password123@1',
-		confirmNewPassword: 'Password123@1',
+		oldPassword: '',
+		newPassword: '',
+		confirmNewPassword: '',
 	};
 
 	const validationSchema = Yup.object().shape({
